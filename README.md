@@ -29,7 +29,7 @@ has_many: items
 | prefecture_id      | integer    | null: false                    |
 | shipping_days_id   | integer    | null: false                    |
 | price              | integer    | null: false                    |
-| user_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 ### association
 belongs_to: user
@@ -39,8 +39,8 @@ has_one: order
 
 | column        | type       | options                        |
 | ------------- | ---------- | ------------------------------ |
-| user_id       | references | null: false, foreign_key: true |
-| item_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
 
 ### association 
 belongs_to: user
@@ -56,7 +56,7 @@ has_one: address
 | address     | string     | null: false                    | 
 | building    | string     |                                |
 | phone       | integer    | null: false                    |
-| order_id    | references | null: false, foreign_key: true |
+| order       | references | null: false, foreign_key: true |
 
 ### association
 belongs_to: order
