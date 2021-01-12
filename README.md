@@ -56,7 +56,7 @@ has_one: address
 | city               | string     | null: false                    | 
 | address            | string     | null: false                    | 
 | building           | string     |                                |
-| phone              | integer    | null: false                    |
+| phone              | string     | null: false                    |
 | order              | references | null: false, foreign_key: true |
 
 ### association
