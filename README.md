@@ -14,8 +14,8 @@
 | birthday                  | date    | null: false |
 
 ### association
-has_many: orders
-has_many: items
+has_many :orders
+has_many :items
 
 ## itemsテーブル
 
@@ -32,8 +32,8 @@ has_many: items
 | user               | references | null: false, foreign_key: true |
 
 ### association
-belongs_to: user
-has_one: order
+belongs_to :user
+has_one :order
 
 ## ordersテーブル
 
@@ -43,9 +43,9 @@ has_one: order
 | item          | references | null: false, foreign_key: true |
 
 ### association 
-belongs_to: user
-belongs_to: item
-has_one: address
+belongs_to :user
+belongs_to :item
+has_one :address
 
 ## addressesテーブル
 
@@ -60,4 +60,4 @@ has_one: address
 | order              | references | null: false, foreign_key: true |
 
 ### association
-belongs_to: order
+belongs_to :order
