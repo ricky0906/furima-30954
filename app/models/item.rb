@@ -10,4 +10,6 @@ class Item < ApplicationRecord
     validates :price
     validates :user
   end
+
+  belongs_to :user
 end
