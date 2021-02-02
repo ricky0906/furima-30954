@@ -19,4 +19,6 @@ class User < ApplicationRecord
     validates :birthday
     validates :nickname, uniqueness: true
   end
+
+  has_many :items
 end
