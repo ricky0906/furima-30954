@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  before do 
+  before do
     @item = FactoryBot.build(:item)
   end
 
@@ -15,7 +15,7 @@ RSpec.describe Item, type: :model do
       it 'nameが40文字より多いと登録できない' do
         @item.name = 'a' * 41
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name is too long (maximum is 40 characters)")
+        expect(@item.errors.full_messages).to include('Name is too long (maximum is 40 characters)')
       end
       it 'explanationが空では登録できない' do
         @item.explanation = ''
@@ -25,7 +25,7 @@ RSpec.describe Item, type: :model do
       it 'explanationが1000文字より多いと登録できない' do
         @item.explanation = 'a' * 1001
         @item.valid?
-        expect(@item.errors.full_messages).to include("Explanation is too long (maximum is 1000 characters)")
+        expect(@item.errors.full_messages).to include('Explanation is too long (maximum is 1000 characters)')
       end
       it 'priceが空では登録できない' do
         @item.price = ''
@@ -35,17 +35,17 @@ RSpec.describe Item, type: :model do
       it 'priceが全角数字では登録できない' do
         @item.price = '５００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'priceが300より小さいと登録できない' do
         @item.price = '299'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceが9999999より大きいと登録できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than 10000000")
+        expect(@item.errors.full_messages).to include('Price must be less than 10000000')
       end
       it 'imageが空では登録できない' do
         @item.image = nil
@@ -60,7 +60,7 @@ RSpec.describe Item, type: :model do
       it 'category_idが1では登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'condition_idが空では登録できない' do
         @item.condition_id = nil
@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
       it 'condition_idが1では登録できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
       it 'shipping_charge_idが空では登録できない' do
         @item.shipping_charge_id = nil
@@ -80,7 +80,7 @@ RSpec.describe Item, type: :model do
       it 'shipping_charge_idが1では登録できない' do
         @item.shipping_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping charge must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping charge must be other than 1')
       end
       it 'prefecture_idが空では登録できない' do
         @item.prefecture_id = nil
@@ -90,7 +90,7 @@ RSpec.describe Item, type: :model do
       it 'prefecture_idが1では登録できない' do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it 'shipping_days_idが空では登録できない' do
         @item.shipping_days_id = nil
@@ -100,7 +100,7 @@ RSpec.describe Item, type: :model do
       it 'shipping_days_idが1では登録できない' do
         @item.shipping_days_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping days must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping days must be other than 1')
       end
     end
 
