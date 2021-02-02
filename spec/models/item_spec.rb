@@ -108,26 +108,6 @@ RSpec.describe Item, type: :model do
       it '全てのカラムに値が存在すれば登録できる' do
         expect(@item).to be_valid
       end
-      it 'nameが40文字以下なら登録できる' do
-        @item.name = 'a'
-        expect(@item).to be_valid
-      end
-      it 'explanationが1000文字以下なら登録できる' do
-        @item.explanation = 'a'
-        expect(@item).to be_valid
-      end
-      it 'priceが半角数字300以上、10000000以下なら登録できる' do
-        @item.price = '300'
-        expect(@item).to be_valid
-      end
-      it 'category_id, condition_id, shipping_charge_id, prefecture_id, shipping_days_idが1以外の数値なら登録できる' do
-        @item.category_id = 2
-        @item.condition_id = 2
-        @item.shipping_charge_id = 2
-        @item.prefecture_id = 2
-        @item.shipping_days_id = 2
-        expect(@item).to be_valid
-      end
     end
   end
 end
