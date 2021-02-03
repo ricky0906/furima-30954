@@ -152,9 +152,10 @@
             </div>
           <% end %>
         </li>
-        <% if item = nil %>
-          <li class='list'>
-            <%= link_to '#' do %>
+      <% end %>
+      <% if @items.empty? %>  
+        <li class='list'>
+          <%= link_to '#' do %>
             <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
             <div class='item-info'>
               <h3 class='item-name'>
@@ -168,9 +169,8 @@
                 </div>
               </div>
             </div>
-            <% end %>
-          </li>
-        <% end %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
