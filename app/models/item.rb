@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :shipping_charge
   belongs_to :prefecture
-  belongs_to :shipping_day
+  belongs_to :delivery_date
 
   belongs_to :user
   has_one_attached :image
@@ -19,7 +19,7 @@ class Item < ApplicationRecord
       validates :condition_id
       validates :shipping_charge_id
       validates :prefecture_id
-      validates :shipping_days_id
+      validates :delivery_date_id
     end
   end
 end
