@@ -92,15 +92,15 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
-      it 'shipping_days_idが空では登録できない' do
-        @item.shipping_days_id = nil
+      it 'delivery_date_idが空では登録できない' do
+        @item.delivery_date_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping days can't be blank")
+        expect(@item.errors.full_messages).to include("Delivery date can't be blank")
       end
-      it 'shipping_days_idが1では登録できない' do
-        @item.shipping_days_id = 1
+      it 'delivery_date_idが1では登録できない' do
+        @item.delivery_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping days must be other than 1')
+        expect(@item.errors.full_messages).to include('Delivery date must be other than 1')
       end
     end
 
