@@ -7,7 +7,7 @@ class OrderAddress
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :address
-    validates :phone, format: { with: /\A[0-9]+\z/ }
+    validates :phone, format: { with: /\A[0-9]+\z/ }, length: { maximum: 11 }
     validates :token
   end
 
