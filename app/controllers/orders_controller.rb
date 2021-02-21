@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: :index
   before_action :find_params, only: [:index, :create]
+  before_action :confirm_user, only: :index
   
   def index
     @order_address = OrderAddress.new
@@ -35,5 +37,11 @@ class OrdersController < ApplicationController
       card:     order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def confirm_user
+    if @item.user_id == current_user.id
+      redirect_to items_path
+    end
   end
 end

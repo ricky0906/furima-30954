@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   def find_item
     @item = Item.find(params[:id])
   end
-
+  
   def confirm_user
     if @item.user_id != current_user.id
       redirect_to items_path(@item)
