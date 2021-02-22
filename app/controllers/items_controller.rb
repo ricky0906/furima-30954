@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params) 
+    if @item.update(item_params)
       redirect_to items_path(@item)
     else
       render :edit
@@ -35,9 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-      redirect_to items_path(@item)
-    end
+    redirect_to items_path(@item) if @item.destroy
   end
 
   private
@@ -52,8 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def confirm_user
-    if @item.user_id != current_user.id
-      redirect_to items_path(@item)
-    end
+    redirect_to items_path(@item) if @item.user_id != current_user.id
   end
 end
